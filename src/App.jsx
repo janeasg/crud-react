@@ -4,15 +4,15 @@ function App() {
   const [texto, setTexto] = useState("");
 
   function adicionar() {
-    setItens([...Itens, texto]);
-    setTexto("");
+    if (texto.trim() !== "") {
+      setItens([...Itens, texto]);
+      setTexto("");
+    }
   }
 
   function remover(index) {
     setItens(Itens.filter((_, i) => i !== index));
   }
-
-
 
   return (
     <>
